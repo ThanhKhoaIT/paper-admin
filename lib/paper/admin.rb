@@ -1,7 +1,7 @@
 require "paper/admin/version"
+require "paper/admin/rails"
 
 module Paper
   module Admin
-    # Your code goes here...
   end
 end
