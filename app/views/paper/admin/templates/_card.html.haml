@@ -1,0 +1,20 @@
+- colors = %w(primary info success warning danger)
+- available_color = color.to_s.in?(colors)
+- icon_class = available_color ? "icon-#{color}" : nil
+- icon_style = available_color ? nil : "color: #{color}"
+
+.card
+  .content
+    .row
+      .col-xs-5
+        .icon-big.text-center{class: icon_class, style: icon_style}
+          = ti_icon icon
+      .col-xs-7
+        .numbers
+          %p= label
+          = value
+    .footer
+      %hr/
+      .stats
+        = ti_icon footer_icon
+        = footer_text
