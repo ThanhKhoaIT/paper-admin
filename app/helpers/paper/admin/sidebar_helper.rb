@@ -10,7 +10,15 @@ module Paper
           active: {}
         }.merge(options)
 
-        class_name = current_page?(options[:active]) ? :active : nil
+        if options[:active].is_a?(TrueClass)
+          class_name = :active
+        elsif options[:active].is_a?(FalseClass)
+          class_name = nil
+        elsif current_page?(options[:active])
+          class_name = :active
+        else
+          class_name = nil
+        end
         content_tag :li, class: class_name do
           link_to options[:link] do
             concat ti_icon(options[:icon])

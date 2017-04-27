@@ -919,7 +919,7 @@ textarea.form-control {
 
 .alert {
   border: 0;
-  border-radius: 0;
+  border-radius: 3px;
   color: #FFFFFF;
   padding: 10px 15px;
   font-size: 14px; }
@@ -1021,6 +1021,10 @@ textarea.form-control {
 .table-striped > tbody > tr > td,
 .table-striped > tfoot > tr > td {
   padding: 15px 8px; }
+
+  .table-striped > thead > tr > th {
+    border-bottom: 1px solid #DDD;
+  }
 
 /*      Checkbox and radio         */
 .checkbox,

@@ -3,8 +3,10 @@ module Paper
     module HeaderHelper
 
       def pa_navbar(&block)
-        content_tag :ul, class: "nav navbar-nav navbar-right" do
-          yield(block)
+        content_tag :div, class: 'navbar-collapse collapse' do
+          content_tag :ul, class: "nav navbar-nav navbar-right" do
+            yield(block)
+          end
         end
       end
 
