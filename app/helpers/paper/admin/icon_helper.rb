@@ -3,7 +3,8 @@ module Paper
     module IconHelper
 
       def ti_icon(code)
-        content_tag :i, nil, class: "ti-#{code}"
+        icon_code = code.to_s.gsub('_', '-')
+        content_tag :i, nil, class: "ti-#{icon_code}"
       end
 
     end

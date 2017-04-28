@@ -1,0 +1,36 @@
+/*     General overwrite     */
+body {
+  color: #66615b;
+  font-size: 14px;
+  font-family: 'Muli', Arial, sans-serif;
+}
+
+body .wrapper {
+  min-height: 100vh;
+  position: relative;
+}
+
+a {
+  color: #68B3C8;
+}
+
+a:hover, a:focus {
+  color: #3091B2;
+  text-decoration: none;
+}
+
+a:focus, a:active,
+button::-moz-focus-inner,
+input::-moz-focus-inner,
+select::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+  outline: 0 !important;
+}
+
+.ui-slider-handle:focus,
+.navbar-toggle,
+input:focus,
+button:focus {
+  outline: 0 !important;
+}
+

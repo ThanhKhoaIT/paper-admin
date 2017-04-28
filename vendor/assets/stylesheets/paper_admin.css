@@ -8,5 +8,15 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_tree ./paper/admin
+ *= require_tree ./paper/admin/lib
+ *= require ./paper/admin/components/reset
+ *= require ./paper/admin/components/text
+ *= require ./paper/admin/components/icon
+ *= require ./paper/admin/components/chart
+ *= require ./paper/admin/components/general
+ *= require ./paper/admin/components/animations
+ *= require ./paper/admin/components/input
+ *= require ./paper/admin/components/responsive
+ *= require ./paper/admin/components/label
+ *= require ./paper/admin/components/modify
  */
