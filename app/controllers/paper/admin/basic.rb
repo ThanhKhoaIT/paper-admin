@@ -24,6 +24,7 @@ module Paper
         is_active_record_klass? do
           set_object(klass.new(params_permited!))
           if get_object.save
+            after_save if self.respond_to? :after_save
             flash[:notice] = "Create successful!"
             redirect_to action: :index
           else
@@ -39,6 +40,7 @@ module Paper
       def update
         is_active_record_klass? do
           if get_object.update(params_permited!)
+            after_update if self.respond_to? :after_update
             flash[:notice] = "Update successful!"
             redirect_to action: :index
           else
@@ -67,7 +69,12 @@ module Paper
 
       def default_find_object
         is_active_record_klass? do
-          set_object(klass.find(params[:id]))
+          friendly_used = klass.respond_to? :friendly
+          if friendly_used
+            set_object(klass.friendly.find(params[:id]))
+          else
+            set_object(klass.find(params[:id]))
+          end
         end
       end
 
