@@ -38,10 +38,13 @@ module Paper
           waiting: :default,
           approved: :success,
           rejected: :danger,
+          check_in: :success,
+          confirmed: :success,
           active: :success,
           deactive: :warning
         }
-        content_tag :span, text, class: ["label", "label-#{colors[text.to_sym]}"]
+        name = colors[text.to_sym] || :default
+        content_tag :span, text, class: ["label", "label-#{name}"]
       end
 
     end
