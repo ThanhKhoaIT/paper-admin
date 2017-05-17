@@ -7,7 +7,8 @@ module Paper
           icon: :close,
           text: "Not set",
           link: root_path,
-          active: {}
+          active: {},
+          num: nil
         }.merge(options)
 
         if options[:active].is_a?(TrueClass)
@@ -19,11 +20,21 @@ module Paper
         else
           class_name = nil
         end
+
         content_tag :li, class: class_name do
           link_to options[:link] do
             concat ti_icon(options[:icon])
             concat content_tag(:p, options[:text])
+            concat number_label(options[:num])
           end
+        end
+      end
+
+      private
+
+      def number_label(num)
+        unless num.to_i.zero?
+          content_tag(:span, num, class: 'label label-danger')
         end
       end
 

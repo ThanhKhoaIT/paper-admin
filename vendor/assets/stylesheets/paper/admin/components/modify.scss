@@ -5,3 +5,16 @@ table {
     }
   }
 }
+
+.sidebar {
+  ul.nav {
+    li {
+      span.label {
+        position: absolute;
+        left: 45px;
+        top: 3px;
+        box-shadow: 1px 1px 1px #aaa;
+      }
+    }
+  }
+}
