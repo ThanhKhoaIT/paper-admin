@@ -17,3 +17,7 @@ $(document).on('change', 'input[type="file"][target]', function(event){
     reader.readAsDataURL(this.files[0]);
   }
 });
+
+$(function() {
+  $('[data-toggle="tooltip"]').tooltip({ container: 'body' });
+})
